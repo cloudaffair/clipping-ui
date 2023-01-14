@@ -1,0 +1,47 @@
+<!DOCTYPE html> 
+<html> 
+
+<head>
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+
+    <script type="text/javascript">
+        var clipIn = '';
+        var clipOut = '';
+
+        $(function(){
+            $('#clipInBtn').click(function(){
+                clipIn = ($('#video_container').find('video').get(0).currentTime);
+
+                $('#clipIn').html(clipIn);
+            })
+
+            $('#clipOutBtn').click(function(){
+                clipOut = ($('#video_container').find('video').get(0).currentTime);
+
+                $('#clipOut').html(clipOut);
+            })
+        })
+    </script>
+
+
+</head>
+<body> 
+
+    <div id="video_container">
+        <video poster="http://media.w3.org/2010/05/sintel/poster.png" preload="none" controls="" id="video" tabindex="0">
+          <source type="video/mp4" src="http://media.w3.org/2010/05/sintel/trailer.mp4" id="mp4"></source>
+          <p>Your user agent does not support the HTML5 Video element.</p>
+        </video>
+    </div>
+
+    <div id="controls">
+        <button id="clipInBtn">Clip In</button>
+        <button id="clipOutBtn">Clip Out</button>
+    </div>
+
+    <div>clip In : <span id="clipIn"></span></div>
+    <div>clip Out : <span id="clipOut"></span></div>
+
+</body> 
+
+</html>
